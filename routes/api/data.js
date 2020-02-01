@@ -6,11 +6,11 @@ router.get('/',(req,res)=>{
     res.send("data api directory");
 });
 
-//@type     GET
+//@type     POST
 //@route    /api/data/send
 //@desc     route to send data to api
 //@access   PUBLIC
-router.get('/send',(req,res)=>{
+router.post('/send',(req,res)=>{
     const newdata = new schema({
         temprature: req.body.temprature,
         bpm: req.body.bpm,
@@ -22,11 +22,11 @@ router.get('/send',(req,res)=>{
         .catch(err=>console.log(err))
 });
 
-//@type     POST
+//@type     GET
 //@route    /api/data/get
 //@desc     route to get data from api
 //@access   PUBLIC
-router.post('/get',(req,res)=>{
+router.get('/get',(req,res)=>{
     schema.find({}).limit(10)
         .then( data => {
             res.json({data});
