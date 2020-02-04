@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
 //actual route for data api
 app.use('/api/data',data);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 app.listen( PORT,()=>{
     console.log(`app running on port ${PORT}`);
 });
